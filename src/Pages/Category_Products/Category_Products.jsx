@@ -26,18 +26,17 @@ const Category_Products = () => {
 
   return (
     <div className="product_grid">
-      {categoryProducts?.map((product, indx) => {
+      {categoryProducts?.map((item, indx) => {
         return (
-          <Link to={`/product_details/${product.id}`} className="card">
-            <img src={product.image} alt={product.title} />
-            <div className="category">{product.category}</div>
-            <div className="name">{product.title}</div>
-            <div className="price">₹{product.price}</div>
-            <div className="rating">
-              <p>{product.rating.rate}</p>
-              <p>{product.rating.count}</p>
-            </div>
-          </Link>
+          <Link to={`/product_details/${item.id}`} className='card' key={item.id}>
+          <img src={item.image} alt='' />
+          <div className='name'>{item.title}</div>
+          <div className='price'> ₹{item.price}</div>
+          <div className='rating'>
+              <p className='rate'>{item.rating.rate} <i class='bx bxs-star'></i></p>
+              <p className='stock'>Stock : {item.rating.count}</p>
+          </div>
+      </Link>
         );
       })}
     </div>

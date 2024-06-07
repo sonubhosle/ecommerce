@@ -22,6 +22,7 @@ const Category = () => {
 
   return (
     <div className="categories">
+      <Link to='/'>Home</Link>
       {categories?.map((category, index) => {
         return <Link to={`/category_products/${category}`}>{category}</Link>;
       })}

@@ -6,6 +6,8 @@ import Category from "./Component/Category/Category";
 import Home from "./Pages/Home/Home";
 import Product_Details from "./Pages/Product_Details/Product_Details";
 import Category_Products from "./Pages/Category_Products/Category_Products";
+import Buy from "./Pages/Buy/Buy";
+import Cart from "./Pages/Cart/Cart";
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
           path="/category_products/:category"
           element={<Category_Products />}
         />
+           <Route path="/buy" element={<Buy />} />
+           <Route path="/cart" element={<Cart/>} />
       </Routes>
     </BrowserRouter>
   );

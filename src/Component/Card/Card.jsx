@@ -1,17 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Card = ({product,indx}) => {
+const Card = ({ product, indx }) => {
   return (
-    <div className="card" key={indx}>
+    <Link to={`/product_details/${product.id}`} className="card" key={indx}>
       <img src={product.image} alt="" />
-      <div className="cat">{product.category}</div>
+      <div className="category">{product.category}</div>
       <div className="name">{product.title}</div>
-      <div className="price">{product.price}</div>
+      <div className="price"> ₹{product.price}</div>
       <div className="rating">
-        {product.rating.count}
-        {product.rating.rate}
+        <p className="rate">
+          {product.rating.rate} <i class="bx bxs-star"></i>
+        </p>
+        <p className="stock">Stock : {product.rating.count}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
